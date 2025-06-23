@@ -1,0 +1,127 @@
+:root {
+  --primary-color: #007bff;
+  --background-light: #f8f9fa;
+  --text-color-light: #212529;
+  --card-background-light: rgba(255, 255, 255, 0.4);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+
+  --background-dark: #121212;
+  --text-color-dark: #e0e0e0;
+  --card-background-dark: rgba(30, 30, 30, 0.6);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+/* Weather Themes */
+.theme-clear {
+  --primary-color: #4a90e2; /* Bright Blue */
+}
+
+.theme-clouds {
+  --primary-color: #7f8c8d; /* Grayish Blue */
+}
+
+.theme-rain {
+  --primary-color: #2c3e50; /* Dark Slate Blue */
+}
+
+.theme-thunderstorm {
+  --primary-color: #5e3370; /* Dark Purple */
+}
+
+.theme-snow {
+  --primary-color: #a7d2cb; /* Light Teal */
+}
+
+.theme-mist, .theme-haze {
+  --primary-color: #bdc3c7; /* Silver */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.glass-card {
+  background: var(--card-background-light);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 var(--shadow-light);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .glass-card {
+  background: var(--card-background-dark);
+  box-shadow: 0 8px 32px 0 var(--shadow-dark);
+}
+
+.weather-info-container .display-4 {
+  font-size: 4.5rem;
+}
+
+.weather-info-container .lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.weather-info-container .weather-icon {
+  font-size: 6rem;
+}
+
+.weather-info-container hr {
+  border-top: 1px solid var(--text-color-light);
+  opacity: 0.25;
+}
+
+body.dark-mode .weather-info-container hr {
+  border-top: 1px solid var(--text-color-dark);
+}
+
+.theme-toggle-btn {
+  background-color: transparent;
+  border: 1px solid var(--text-color-light);
+  color: var(--text-color-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--text-color-light);
+  color: var(--background-light);
+}
+
+body.dark-mode .theme-toggle-btn {
+  border-color: var(--text-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background-color: var(--text-color-dark);
+  color: var(--background-dark);
+}
+
+.btn-themed {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-themed:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 85%, black);
+  color: white;
+}
